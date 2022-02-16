@@ -203,7 +203,7 @@ export default {
 
   .footer{
     @include makeitflex(column, flex-start);
-    background-color: $clr-blue;
+    background-color: $clr-blue !important;
     padding: 60/1920*100vw 150/1920*100vw 45/1920*100vw;
     margin-top: auto;
     align-items: normal;
