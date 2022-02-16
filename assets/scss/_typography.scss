@@ -1,0 +1,42 @@
+
+// .textTitle{
+//   font-family: 'Manrope', sans-serif !important;
+//       font-style: normal;
+//       font-weight: 800 !important;
+//       font-size: $h2FS !important;
+//       text-align: center;
+//       letter-spacing: 0.05em !important;
+// }
+
+// .textSubtitle{
+//   font-family: 'Manrope', sans-serif !important;
+//   font-style: normal;
+//   font-weight: 700 !important;
+//   font-size: $h5FS !important;
+//   text-align: center;
+//   letter-spacing: 0.05em !important;
+// }
+.btn{
+  cursor: pointer;
+}
+.btn_transparent{
+  color: $clr-blue;
+}
+.btn_border{
+  border: $clr-blue 2px solid;
+  border-radius:20px;
+  color: $clr-blue;
+  padding: 10/1920*100vw 23/1920*100vw;
+}
+.btn_border_white{
+  border: $clr-white 2px solid;
+  border-radius:10px;
+  color: $clr-white;
+  padding: 10/1920*100vw 23/1920*100vw;
+}
+.btn_filled{
+  background-color: $clr-blue;
+  border-radius:20px;
+  color: $clr-white;
+  padding: 10/1920*100vw 23/1920*100vw;
+}

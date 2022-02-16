@@ -1,0 +1,19 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$fs-18:18/1920*100vw;
+$fs-20:20/1920*100vw;
+$fs-24:24/1920*100vw;
+$fs-34:34/1920*100vw;
+$fs-55:55/1920*100vw;
+
+$clr-blue: #051DDE;
+$clr-white: #ffffff;
+$clr-yellow: #FFD900;
+$clr-grey-dark: #606977;
+$clr-black-light: #01044E;
+$clr-grey-light: #D6D6D6;
+
+@import "scss/mixins","scss/reset","scss/typography"
