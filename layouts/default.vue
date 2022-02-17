@@ -46,25 +46,8 @@
       </div>
       <div class="ftr_interactive">
         <div class="download">
-          <button href="#" class="dwld_btn btn btn_border_white">
-            <svg viewBox="0 0 27.312 32.781">
-              <g transform="translate(-6.748 -4.5)">
-                <path d="M27.028,10.821c-2.868,0-4.079,1.408-6.076,1.408-2.048,0-3.61-1.4-6.094-1.4A8.279,8.279,0,0,0,8.184,14.96c-2.313,3.67-1.92,10.583,1.826,16.471,1.34,2.108,3.132,4.472,5.479,4.5h.043c2.04,0,2.646-1.374,5.453-1.391h.043c2.765,0,3.32,1.383,5.351,1.383h.043c2.347-.026,4.233-2.646,5.573-4.745A23.344,23.344,0,0,0,34.06,27.2c-5.419-2.117-6.29-10.019-.93-13.049a8.025,8.025,0,0,0-6.1-3.328Z" transform="translate(0 1.351)" fill="#fff"/>
-                <path d="M24.086,4.5a7.463,7.463,0,0,0-4.865,2.7,6.788,6.788,0,0,0-1.587,5.189h.137a6.335,6.335,0,0,0,4.762-2.569A7.269,7.269,0,0,0,24.086,4.5Z" transform="translate(2.311 0)" fill="#fff"/>
-              </g>
-            </svg>
-            <!-- <p> -->
-              App Store
-            <!-- </p> -->
-          </button>
-          <button href="#" class="dwld_btn btn btn_border_white">
-            <svg viewBox="0 0 28.779 31.925">
-              <path d="M20.489,14.612,6.725.811,24.237,10.864l-3.748,3.748ZM3.132,0A2.424,2.424,0,0,0,1.779,2.2V29.723a2.424,2.424,0,0,0,1.353,2.2l16-15.966ZM29.65,14.07l-3.673-2.127-4.1,4.023,4.1,4.023,3.748-2.127a2.5,2.5,0,0,0-.075-3.792ZM6.725,31.12,24.237,21.067l-3.748-3.748Z" transform="translate(-1.779)" fill="#fff"/>
-            </svg>
-            <!-- <p> -->
-              Play Store
-            <!-- </p> -->
-          </button>
+          <btn-dwnld-apple color="white" link="#" />
+          <btn-dwnld-google color="white" link="#" />
         </div>
         <div class="subscribe">
           <p class="inf">
@@ -99,7 +82,12 @@
 <script>
 export default {
   name: 'DefaultLayout',
+  components: {
+    BtnDwnldApple: () => import('~/components/btnDwnldApple'),
+    BtnDwnldGoogle: () => import('~/components/btnDwnldGoogle')
+  },
   data() {
+
     return {
       rules: [
       value => !!value || 'Required.',
@@ -174,13 +162,12 @@ export default {
   }
   .header{
     position: fixed;
-    width: 1140/1920*100vw;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 40/1920*100vw;
+    padding: 0 150/1920*100vw ;
+    width: 100%;
     @include makeitflex(row, space-between);
     z-index: 1000;
-    .logo{
+   & .logo{
       display: flex;
       align-items: center;
       >p{
@@ -194,7 +181,7 @@ export default {
         margin-right: 10px;
       }
     }
-    .navbtn{
+  & .navbtn{
       font-size: $fs-18;
       font-weight: normal;
       align-self: center;
@@ -207,10 +194,10 @@ export default {
     padding: 60/1920*100vw 150/1920*100vw 45/1920*100vw;
     margin-top: auto;
     align-items: normal;
-    .ftr_navigation{
+   & .ftr_navigation{
       @include makeitflex(row,flex-start);
 
-      .col{
+     & .col{
         @include makeitflex(column, flex-start);
         margin-right: 120/1920*100vw;
         flex: 0;
@@ -218,7 +205,7 @@ export default {
           width: 73/1920*100vw;
           height: auto;
         }
-        .link{
+      & .link{
           color: $clr-white;
           font-size: $fs-18;
           font-weight: 400;
@@ -226,42 +213,25 @@ export default {
         }
       }
     }
-    .ftr_interactive{
+   & .ftr_interactive{
       @include makeitflex(row, space-between);
       margin-bottom: 30/1920*100vw;
-      .download{
+     & .download{
           @include makeitflex(row,flex-start);
           align-items: flex-end;
-        .dwld_btn{
-          height: fit-content;
-          font-size: $fs-20;
-          padding: 15/1920*100vw;
-          @include makeitflex(row,flex-start);
-          align-items: center;
-          flex: 1 1 0;
-          margin-right: 30/1920*100vw;
-            white-space: nowrap;
-          >svg{
-            height: 32/1920*100vw;
-            width: auto;
-            margin-right: 18/1920*100vw;
-          }
-          >p{
-            white-space: nowrap;
-          }
-        }
+
       }
-      .subscribe{
-        .inf{
+     & .subscribe{
+       & .inf{
           font-size: $fs-18;
           font-weight: 400;
           color: $clr-white;
           margin-bottom: 25/1920*100vw;
         }
-        .form{
+       & .form{
           width: 460/1920*100vw;
           position: relative;
-          .form_btn{
+         & .form_btn{
             font-size: $fs-18;
             position: absolute;
             padding: auto 42/1920*100vw;
@@ -270,7 +240,7 @@ export default {
             right: 0;
             transform: translate(-5px, 5px)
           }
-          .v-input{
+         & .v-input{
             font-size: $fs-18 !important;
             & .v-input__control .v-text-field__details {
               position: absolute;
@@ -284,9 +254,10 @@ export default {
         }
       }
     }
-    .ftr_info{
+   & .ftr_info{
       @include makeitflex(row,flex-start);
       >p{
+        cursor: pointer;
         margin-right: 5/1920*100vw;
         width: fit-content;
         font-size: $fs-18;
